@@ -1,1 +1,70 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+html {
+  font-size: 1rem;
+}
+
+@include media-breakpoint-up(sm) {
+  html {
+    font-size: 1.2rem;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  html {
+    font-size: 1.4rem;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  html {
+    font-size: 1.6rem;
+  }
+}
+
+.progress-bar {
+  transition-duration: 1s;
+}
+
+.prog-col {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+
+.btn-link {
+  color: #000000;
+}
+
+.btn-link:hover {
+  color: #000000;
+  text-decoration: none;
+}
+
+.btn-link:focus {
+  color: #000000;
+  text-decoration: none;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.collapse {
+  display: block !important;
+  max-height: 0vh !important;
+  overflow: hidden !important;
+  transition: max-height 0.25s ease-out;
+}
+
+.collapse.show {
+  max-height: 60vh !important;
+  overflow: hidden !important;
+  transition: max-height 0.25s ease-in;
+}
+
+@include media-breakpoint-up(md) {
+  .collapse.show {
+    max-height: 75vh !important;
+  }
+}

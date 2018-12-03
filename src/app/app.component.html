@@ -1,20 +1,578 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div class="container-fluid">
 
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Josh Houck</h1>
+      <p class="lead">Full Stack JavaScript Developer</p>
+      <p class="text-right">
+        <a
+          class="btn-link"
+          href="https://github.com/JHouck1230"
+          target="_blank"
+          >
+          <i class="fab fa-github fa-2x mx-1"></i>
+        </a>
+        <a
+          class="btn-link"
+          href="https://www.linkedin.com/in/josh-houck/"
+          target="_blank"
+          >
+          <i class="fab fa-linkedin fa-2x mx-1"></i>
+        </a>
+        <a class="clickable" (click)="lgModal.show()">
+          <i class="far fa-file-pdf fa-2x mx-1"></i>
+        </a>
+      </p>
+    </div>
+  </div>
+
+  <div>
+    <div class="media">
+      <img
+        id="selfie"
+        src="/assets/images/Selfie.jpg"
+        class="mr-3 d-none d-md-block"
+        >
+      <div class="media-body">
+        <accordion>
+          <accordion-group (isOpenChange)="toggleCollapse($event, 'js')">
+            <button class="btn btn-link btn-block clearfix" accordion-heading>
+              <h4 class="text-left">JavaScript</h4>
+              <progressbar
+                [max]="100"
+                type="primary"
+                [value]="model.js"
+                ></progressbar>
+            </button>
+            <div class="px-3">
+              <div class="row">
+                <span class="col-12 col-lg-4 col-xl-3 text-left">Angular</span>
+                <progressbar
+                  class="col-12 col-lg-8 col-xl-9 prog-col"
+                  [max]="100"
+                  type="primary"
+                  [value]="model.angular"
+                  ></progressbar>
+              </div>
+              <div class="row">
+                <span class="col-12 col-lg-4 col-xl-3 text-left">TypeScript</span>
+                <progressbar
+                  class="col-12 col-lg-8 col-xl-9 prog-col"
+                  [max]="100"
+                  type="primary"
+                  [value]="model.typescript"
+                  ></progressbar>
+              </div>
+              <div class="row">
+                <span class="col-12 col-lg-4 col-xl-3 text-left">Express.js</span>
+                <progressbar
+                  class="col-12 col-lg-8 col-xl-9 prog-col"
+                  [max]="100"
+                  type="primary"
+                  [value]="model.express"
+                  ></progressbar>
+              </div>
+              <div class="row">
+                <span class="col-12 col-lg-4 col-xl-3 text-left">Node.js</span>
+                <progressbar
+                  class="col-12 col-lg-8 col-xl-9 prog-col"
+                  [max]="100"
+                  type="primary"
+                  [value]="model.node"
+                  ></progressbar>
+              </div>
+              <div class="row">
+                <span class="col-12 col-lg-4 col-xl-3 text-left">D3.js</span>
+                <progressbar
+                  class="col-12 col-lg-8 col-xl-9 prog-col"
+                  [max]="100"
+                  type="primary"
+                  [value]="model.d3"
+                  ></progressbar>
+              </div>
+              <div class="row">
+                <span class="col-12 col-lg-4 col-xl-3 text-left">MongoDB</span>
+                <progressbar
+                  class="col-12 col-lg-8 col-xl-9 prog-col"
+                  [max]="100"
+                  type="primary"
+                  [value]="model.mongo"
+                  ></progressbar>
+              </div>
+              <div class="row">
+                <span class="col-12 col-lg-4 col-xl-3 text-left">MySQL</span>
+                <progressbar
+                  class="col-12 col-lg-8 col-xl-9 prog-col"
+                  [max]="100"
+                  type="primary"
+                  [value]="model.mysql"
+                  ></progressbar>
+              </div>
+              <div class="row">
+                <span class="col-12 col-lg-4 col-xl-3 text-left">jQuery</span>
+                <progressbar
+                  class="col-12 col-lg-8 col-xl-9 prog-col"
+                  [max]="100"
+                  type="primary"
+                  [value]="model.jquery"
+                  ></progressbar>
+              </div>
+              <div class="row">
+                <span class="col-12 col-lg-4 col-xl-3 text-left">React.js</span>
+                <progressbar
+                  class="col-12 col-lg-8 col-xl-9 prog-col"
+                  [max]="100"
+                  type="primary"
+                  [value]="model.react"
+                  ></progressbar>
+              </div>
+              <div class="row">
+                <span class="col-12 col-lg-4 col-xl-3 text-left">Firebase</span>
+                <progressbar
+                  class="col-12 col-lg-8 col-xl-9 prog-col"
+                  [max]="100"
+                  type="primary"
+                  [value]="model.firebase"
+                  ></progressbar>
+              </div>
+              <div class="row">
+                <span class="col-12 col-lg-4 col-xl-3 text-left">StormPath</span>
+                <progressbar
+                  class="col-12 col-lg-8 col-xl-9 prog-col"
+                  [max]="100"
+                  type="primary"
+                  [value]="model.stormpath"
+                  ></progressbar>
+              </div>
+              <div class="row">
+                <span class="col-12 col-lg-4 col-xl-3 text-left">Cordova</span>
+                <progressbar
+                  class="col-12 col-lg-8 col-xl-9 prog-col"
+                  [max]="100"
+                  type="primary"
+                  [value]="model.cordova"
+                  ></progressbar>
+              </div>
+            </div>
+          </accordion-group>
+          <accordion-group (isOpenChange)="toggleCollapse($event, 'css')">
+            <button class="btn btn-link btn-block clearfix" accordion-heading>
+              <h4 class="text-left">CSS</h4>
+              <progressbar
+                [max]="100"
+                type="primary"
+                [value]="model.css"
+                ></progressbar>
+            </button>
+            <div class="px-3">
+              <div class="row">
+                <span class="col-12 col-lg-4 col-xl-3 text-left">Bootstrap</span>
+                <progressbar
+                  class="col-12 col-lg-8 col-xl-9 prog-col"
+                  [max]="100"
+                  type="primary"
+                  [value]="model.bootstrap"
+                  ></progressbar>
+              </div>
+              <div class="row">
+                <span class="col-12 col-lg-4 col-xl-3 text-left">Materialize</span>
+                <progressbar
+                  class="col-12 col-lg-8 col-xl-9 prog-col"
+                  [max]="100"
+                  type="primary"
+                  [value]="model.materialize"
+                  ></progressbar>
+              </div>
+              <div class="row">
+                <span class="col-12 col-lg-4 col-xl-3 text-left">SCSS</span>
+                <progressbar
+                  class="col-12 col-lg-8 col-xl-9 prog-col"
+                  [max]="100"
+                  type="primary"
+                  [value]="model.scss"
+                  ></progressbar>
+              </div>
+              <div class="row">
+                <span class="col-12 col-lg-4 col-xl-3 text-left">HTML5</span>
+                <progressbar
+                  class="col-12 col-lg-8 col-xl-9 prog-col"
+                  [max]="100"
+                  type="primary"
+                  [value]="model.html"
+                  ></progressbar>
+              </div>
+              <div class="row">
+                <span class="col-12 col-lg-4 col-xl-3 text-left">Jade/Pug</span>
+                <progressbar
+                  class="col-12 col-lg-8 col-xl-9 prog-col"
+                  [max]="100"
+                  type="primary"
+                  [value]="model.pug"
+                  ></progressbar>
+              </div>
+              <div class="row">
+                <span class="col-12 col-lg-4 col-xl-3 text-left">Ionic</span>
+                <progressbar
+                  class="col-12 col-lg-8 col-xl-9 prog-col"
+                  [max]="100"
+                  type="primary"
+                  [value]="model.ionic"
+                  ></progressbar>
+              </div>
+              <div class="row">
+                <span class="col-12 col-lg-4 col-xl-3 text-left">PureCSS</span>
+                <progressbar
+                  class="col-12 col-lg-8 col-xl-9 prog-col"
+                  [max]="100"
+                  type="primary"
+                  [value]="model.pure"
+                  ></progressbar>
+              </div>
+              <div class="row">
+                <span class="col-12 col-lg-4 col-xl-3 text-left">SASS</span>
+                <progressbar
+                  class="col-12 col-lg-8 col-xl-9 prog-col"
+                  [max]="100"
+                  type="primary"
+                  [value]="model.sass"
+                  ></progressbar>
+              </div>
+              <div class="row">
+                <span class="col-12 col-lg-4 col-xl-3 text-left">Less</span>
+                <progressbar
+                  class="col-12 col-lg-8 col-xl-9 prog-col"
+                  [max]="100"
+                  type="primary"
+                  [value]="model.less"
+                  ></progressbar>
+              </div>
+            </div>
+          </accordion-group>
+          <accordion-group (isOpenChange)="toggleCollapse($event, 'workflow')">
+            <button class="btn btn-link btn-block clearfix" accordion-heading>
+              <h4 class="text-left">Workflow</h4>
+              <progressbar
+                [max]="100"
+                type="primary"
+                [value]="model.workflow"
+                ></progressbar>
+            </button>
+            <div class="px-3">
+              <div class="row">
+                <span class="col-12 col-lg-4 col-xl-3 text-left">NPM</span>
+                <progressbar
+                  class="col-12 col-lg-8 col-xl-9 prog-col"
+                  [max]="100"
+                  type="primary"
+                  [value]="model.npm"
+                  ></progressbar>
+              </div>
+              <div class="row">
+                <span class="col-12 col-lg-4 col-xl-3 text-left">Angular CLI</span>
+                <progressbar
+                  class="col-12 col-lg-8 col-xl-9 prog-col"
+                  [max]="100"
+                  type="primary"
+                  [value]="model.ngcli"
+                  ></progressbar>
+              </div>
+              <div class="row">
+                <span class="col-12 col-lg-4 col-xl-3 text-left">Git</span>
+                <progressbar
+                  class="col-12 col-lg-8 col-xl-9 prog-col"
+                  [max]="100"
+                  type="primary"
+                  [value]="model.git"
+                  ></progressbar>
+              </div>
+              <div class="row">
+                <span class="col-12 col-lg-4 col-xl-3 text-left">Bower</span>
+                <progressbar
+                  class="col-12 col-lg-8 col-xl-9 prog-col"
+                  [max]="100"
+                  type="primary"
+                  [value]="model.bower"
+                  ></progressbar>
+              </div>
+              <div class="row">
+                <span class="col-12 col-lg-4 col-xl-3 text-left">Gulp</span>
+                <progressbar
+                  class="col-12 col-lg-8 col-xl-9 prog-col"
+                  [max]="100"
+                  type="primary"
+                  [value]="model.gulp"
+                  ></progressbar>
+              </div>
+            </div>
+          </accordion-group>
+          <accordion-group (isOpenChange)="toggleCollapse($event, 'testing')">
+            <button class="btn btn-link btn-block clearfix" accordion-heading>
+              <h4 class="text-left">Testing</h4>
+              <progressbar
+                [max]="100"
+                type="primary"
+                [value]="model.testing"
+                ></progressbar>
+            </button>
+            <div class="px-3">
+              <div class="row">
+                <span class="col-12 col-lg-4 col-xl-3 text-left">Mocha</span>
+                <progressbar
+                  class="col-12 col-lg-8 col-xl-9 prog-col"
+                  [max]="100"
+                  type="primary"
+                  [value]="model.mocha"
+                  ></progressbar>
+              </div>
+              <div class="row">
+                <span class="col-12 col-lg-4 col-xl-3 text-left">Chai</span>
+                <progressbar
+                  class="col-12 col-lg-8 col-xl-9 prog-col"
+                  [max]="100"
+                  type="primary"
+                  [value]="model.chai"
+                  ></progressbar>
+              </div>
+              <div class="row">
+                <span class="col-12 col-lg-4 col-xl-3 text-left">Karma</span>
+                <progressbar
+                  class="col-12 col-lg-8 col-xl-9 prog-col"
+                  [max]="100"
+                  type="primary"
+                  [value]="model.karma"
+                  ></progressbar>
+              </div>
+            </div>
+          </accordion-group>
+        </accordion>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid mt-5">
+    <tabset [justified]="true">
+      <tab heading="foodle.">
+        <div class="px-5 pb-3">
+          <img
+            alt="Unable to load image."
+            class="img-fluid m-3"
+            src="/assets/images/foodle.png"
+            >
+          <h3><u>foodle.</u></h3>
+          <p>Users are able to "like" or "dislike" images of food presented from Yelp's API. A list is compiled of all "liked" food images. User selects a "like" from the list. User then receives information on selected "like."</p>
+          <div class="d-flex justify-content-around">
+            <a href="https://play.google.com/store/apps/details?id=com.awesome.foodle" target="_blank">DEMO</a>
+            <a href="https://github.com/liirene1/SeeFood" target="_blank">CODE</a>
+          </div>
+        </div>
+        <div class="row d-flex justify-content-around align-items-center text-center px-5 pb-5 pt-2">
+          <div class="col-3 m-3">
+            <img class="logo-img" src="/assets/images/ionic.png">
+          </div>
+          <div class="col-3 m-3">
+            <img class="logo-img" src="/assets/images/cordova.jpg">
+          </div>
+          <div class="col-3 m-3">
+            <img class="logo-img" src="/assets/images/firebase.png">
+          </div>
+          <div class="col-3 m-3">
+            <img class="logo-img" src="/assets/images/node.png">
+          </div>
+          <div class="col-3 m-3">
+            <img class="logo-img" src="/assets/images/express.png">
+          </div>
+          <div class="col-3 m-3">
+            <img class="logo-img" src="/assets/images/materialize.png">
+          </div>
+          <div class="col-3 m-3">
+            <img class="logo-img" src="/assets/images/gulp.png">
+          </div>
+          <div class="col-3 m-3">
+            <img class="logo-img" src="/assets/images/lodash.png">
+          </div>
+          <div class="col-3 m-3">
+            <img class="logo-img" src="/assets/images/yelp.png">
+          </div>
+          <div class="col-3 m-3">
+            <img class="logo-img" src="/assets/images/google.png">
+          </div>
+          <div class="col-3 m-3">
+            <img class="logo-img" src="/assets/images/angular.png">
+          </div>
+          <div class="col-3 m-3">
+            <img class="logo-img" src="/assets/images/bower.png">
+          </div>
+        </div>
+      </tab>
+      <tab heading="Flashcards">
+        <div class="px-5 pb-3">
+          <img
+            alt="Unable to load image."
+            class="img-fluid m-3"
+            src="/assets/images/flashcards.png"
+            >
+          <h3><u>Flashcards</u></h3>
+          <p>Users can create flashcards under categories of their choosing. Users can then test their knowledge by clicking "Play."</p>
+          <div class="d-flex justify-content-around">
+            <a href="https://flashcards-app.herokuapp.com/#/edit" target="_blank">DEMO</a>
+            <a href="https://github.com/JHouck1230/Flashcard-App" target="_blank">CODE</a>
+          </div>
+        </div>
+        <div class="row d-flex justify-content-around align-items-center text-center px-5 pb-5 pt-2">
+          <div class="col-3 m-3">
+            <img class="logo-img" src="/assets/images/uirouter.png">
+          </div>
+          <div class="col-3 m-3">
+            <img class="logo-img" src="/assets/images/express.png">
+          </div>
+          <div class="col-3 m-3">
+            <img class="logo-img" src="/assets/images/node.png">
+          </div>
+          <div class="col-3 m-3">
+            <img class="logo-img" src="/assets/images/mysql.png">
+          </div>
+          <div class="col-3 m-3">
+            <img class="logo-img" src="/assets/images/bower.png">
+          </div>
+          <div class="col-3 m-3">
+            <img class="logo-img" src="/assets/images/materialize.png">
+          </div>
+          <div class="col-3 m-3">
+            <img class="logo-img" src="/assets/images/pure.png">
+          </div>
+          <div class="col-3 m-3">
+            <img class="logo-img" src="/assets/images/angular.png">
+          </div>
+        </div>
+      </tab>
+      <tab heading="Draw Something">
+        <div class="px-5 pb-3">
+          <img
+            alt="Unable to load image."
+            class="img-fluid m-3"
+            src="/assets/images/drawSomething.png"
+            >
+          <h3><u>Draw Something</u></h3>
+          <p>Users can click "Draw Something" and create a canvas painting. Once titled, signed, and saved, the painting is displayed in a "gallery" setting. Individual paintings can be viewed by selecting them. Only title and author may be edited.</p>
+          <div class="d-flex justify-content-around">
+            <a href="https://joshsdrawingapp.herokuapp.com/" target="_blank">DEMO</a>
+            <a href="https://github.com/JHouck1230/Custom-Angular-CRUD" target="_blank">CODE</a>
+          </div>
+        </div>
+        <div class="row d-flex justify-content-around align-items-center text-center px-5 pb-5 pt-2">
+          <div class="col-3 m-3">
+            <img class="logo-img" src="/assets/images/bootstrap.png">
+          </div>
+          <div class="col-3 m-3">
+            <img class="logo-img" src="/assets/images/express.png">
+          </div>
+          <div class="col-3 m-3">
+            <img class="logo-img" src="/assets/images/bower.png">
+          </div>
+          <div class="col-3 m-3">
+            <img class="logo-img" src="/assets/images/angular.png">
+          </div>
+          <div class="col-3 m-3">
+            <img class="logo-img" src="/assets/images/node.png">
+          </div>
+          <div class="col-12 col-lg-3 m-3">
+            <img class="logo-img" src="/assets/images/json.png">
+          </div>
+          <div class="col-12 col-lg-3 m-3">
+            <img class="logo-img" src="/assets/images/sweetalert.png">
+          </div>
+        </div>
+      </tab>
+      <tab heading="Counting Game">
+        <div class="px-5 pb-3">
+          <img
+            alt="Unable to load image."
+            class="img-fluid m-3"
+            src="/assets/images/countingGame.png"
+            >
+          <h3><u>Counting Game</u></h3>
+          <p>Users  select any combination numbers to add up to the total number of stars displayed. Goal is to use every number only once. Only 3 rerolls per game. Not every game is winnable!</p>
+          <div class="d-flex justify-content-around">
+            <a href="https://jhouck1230.github.io/Addition-Game/" target="_blank">DEMO</a>
+            <a href="https://github.com/JHouck1230/Addition-Game" target="_blank">CODE</a>
+          </div>
+        </div>
+        <div class="row d-flex justify-content-around align-items-center text-center px-5 pb-5 pt-2">
+          <div class="col-3 m-3">
+            <img class="logo-img" src="/assets/images/animate.png">
+          </div>
+          <div class="col-3 m-3">
+            <img class="logo-img" src="/assets/images/jquery.jpg">
+          </div>
+        </div>
+      </tab>
+      <tab heading="Car2Hot">
+        <div class="px-5 pb-3">
+          <img
+            alt="Unable to load image."
+            class="img-fluid m-3"
+            src="/assets/images/IoT_Tech.png"
+            >
+          <h3><u>Car2Hot</u></h3>
+          <p>Device is built into a vehicle. Device sensors detect presence of occupant when temperature approaches dangerous levels. Three attempts are made to contact owner via SMS. If owner does not reply, emergency services are contacted with location of the vehicle. There is no interface for this application. Submitted in The IoT for Cities Hackathon at the Internet of Things World Event 2016.</p>
+          <div class="d-flex justify-content-around">
+            <a href="https://github.com/JHouck1230/iot-hackathon" target="_blank">DEVICE</a>
+            <a href="https://github.com/cadenichols/iot-server" target="_blank">SERVER</a>
+          </div>
+        </div>
+        <div class="row d-flex justify-content-around align-items-center text-center px-5 pb-5 pt-2">
+          <div class="col-3 m-3">
+            <img class="logo-img" src="/assets/images/express.png">
+          </div>
+          <div class="col-3 m-3">
+            <img class="logo-img" src="/assets/images/node.png">
+          </div>
+          <div class="col-3 m-3">
+            <img class="logo-img" src="/assets/images/intel.png">
+          </div>
+          <div class="col-3 m-3">
+            <img class="logo-img" src="/assets/images/grove.png">
+          </div>
+          <div class="col-12 col-lg-3 m-3">
+            <img class="logo-img" src="/assets/images/pitneybowes.png">
+          </div>
+          <div class="col-12 col-lg-3 m-3">
+            <img class="logo-img" src="/assets/images/socketio.png">
+          </div>
+          <div class="col-12 col-lg-3 m-3">
+            <img class="logo-img" src="/assets/images/tropo.png">
+          </div>
+        </div>
+      </tab>
+    </tabset>
+  </div>
+
+  <div
+    bsModal
+    #lgModal="bs-modal"
+    class="modal fade"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="resume-modal"
+    >
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 id="resume-modal" class="modal-title pull-left">Josh Houck's Resume</h4>
+          <button
+            type="button"
+            class="close pull-right"
+            (click)="lgModal.hide()"
+            aria-label="Close"
+            >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" style="overflow:auto; -webkit-overflow-scrolling:touch">
+          <iframe style="width: 100%; height: 700px;" src="/assets/JoshHouckResume.pdf#zoom=100"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
