@@ -52,19 +52,31 @@ html {
 
 .collapse {
   display: block !important;
-  max-height: 0vh !important;
+  max-height: 0em !important;
   overflow: hidden !important;
   transition: max-height 0.25s ease-out;
 }
 
 .collapse.show {
-  max-height: 60vh !important;
+  max-height: 60em !important;
   overflow: hidden !important;
   transition: max-height 0.25s ease-in;
 }
 
+@include media-breakpoint-up(xs) {
+  .collapse.show {
+    max-height: 95em !important;
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  .collapse.show {
+    max-height: 95em !important;
+  }
+}
+
 @include media-breakpoint-up(md) {
   .collapse.show {
-    max-height: 75vh !important;
+    max-height: 75em !important;
   }
 }
